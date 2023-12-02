@@ -1,0 +1,259 @@
+{
+  "stats": {
+    "suites": 4,
+    "tests": 6,
+    "passes": 5,
+    "pending": 0,
+    "failures": 1,
+    "start": "2023-11-19T23:50:30.370Z",
+    "end": "2023-11-19T23:50:35.998Z",
+    "duration": 5628,
+    "testsRegistered": 6,
+    "passPercent": 83.33333333333334,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "698a6a04-e126-42b5-b1cf-01e4bafe521a",
+      "title": "",
+      "fullFile": "",
+      "file": "",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "e2cbe1a0-69c5-4f3f-b9d7-728fb2f7d719",
+          "title": "Scenario List User Feature",
+          "fullFile": "C:\\Users\\Lenovo\\Documents\\Mocha chai\\test\\api-test\\list_user.test.js",
+          "file": "\\test\\api-test\\list_user.test.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "1. Verifying Success Get List User",
+              "fullTitle": "Scenario List User Feature 1. Verifying Success Get List User",
+              "timedOut": true,
+              "duration": 2006,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "const email = \"jokotampan900@gmail.com\";\nconst response = await domain \n  .get(\"/list-user\")\n  .query({email})\n  \nexpect(response.body.status).to.eql('SUCCESS_USER_LIST');\nexpect(response.body.message).to.eql('List of registered users');\nexpect(response.body).to.include.keys(\"data\", \"message\", \"pagination\", \"status\");",
+              "err": {
+                "message": "Error: Timeout of 2000ms exceeded. For async tests and hooks, ensure \"done()\" is called; if returning a Promise, ensure it resolves. (C:\\Users\\Lenovo\\Documents\\Mocha chai\\test\\api-test\\list_user.test.js)",
+                "estack": "Error: Timeout of 2000ms exceeded. For async tests and hooks, ensure \"done()\" is called; if returning a Promise, ensure it resolves. (C:\\Users\\Lenovo\\Documents\\Mocha chai\\test\\api-test\\list_user.test.js)\n    at listOnTimeout (node:internal/timers:573:17)\n    at process.processTimers (node:internal/timers:514:7)",
+                "diff": null
+              },
+              "uuid": "7c566f12-de79-4710-9b8f-656786b7887f",
+              "parentUUID": "e2cbe1a0-69c5-4f3f-b9d7-728fb2f7d719",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "7c566f12-de79-4710-9b8f-656786b7887f"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 2006,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "1912be05-87e9-4718-b604-7717601e1840",
+          "title": "Scenario Login Feature",
+          "fullFile": "C:\\Users\\Lenovo\\Documents\\Mocha chai\\test\\api-test\\login.test.js",
+          "file": "\\test\\api-test\\login.test.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "1. Verifying Success Login with valid email and password",
+              "fullTitle": "Scenario Login Feature 1. Verifying Success Login with valid email and password",
+              "timedOut": false,
+              "duration": 836,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const response = await domain \n  .post(\"/login\")\n  .send({ email: \"jokotampan900@gmail.com\", \n        password: \"jokotampan900\" \n        });\n  \nexpect(response.body).to.include.keys(\"data\", \"message\", \"status\", \"credentials\"); \nexpect(response.body.status).to.eql('SUCCESS_LOGIN');\nexpect(response.body.message).to.eql('Anda Berhasil Login');",
+              "err": {},
+              "uuid": "04ec1159-c4e5-48a4-a700-50c95f2a77a0",
+              "parentUUID": "1912be05-87e9-4718-b604-7717601e1840",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "04ec1159-c4e5-48a4-a700-50c95f2a77a0"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 836,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "bd867f70-a199-4350-90fb-90b0207032c2",
+          "title": "Scenario Register Feature",
+          "fullFile": "C:\\Users\\Lenovo\\Documents\\Mocha chai\\test\\api-test\\register.test.js",
+          "file": "\\test\\api-test\\register.test.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "1. Verifying Failed Register With Duplicate Email Address",
+              "fullTitle": "Scenario Register Feature 1. Verifying Failed Register With Duplicate Email Address",
+              "timedOut": false,
+              "duration": 556,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const response = await domain\n    .post(\"/register\")\n    .send({ email: \"coba@gmail.com\", password: \"coba\", name:\"rina\" });\nexpect(response.body).to.include.keys(\"data\", \"message\", \"status\");\nexpect(response.body.status).to.eql('FAILED_REGISTER');\nexpect(response.body.data).to.eql('Email sudah terdaftar, gunakan Email lain');\nexpect(response.body.message).to.eql('Gagal Registrasi');\nexpect(response.statusCode).to.eql(420)",
+              "err": {},
+              "uuid": "d47f12f2-67ea-4dfb-8642-dda892e52dcd",
+              "parentUUID": "bd867f70-a199-4350-90fb-90b0207032c2",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "2. Verifying Failed Register With name not filled",
+              "fullTitle": "Scenario Register Feature 2. Verifying Failed Register With name not filled",
+              "timedOut": false,
+              "duration": 568,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const response = await domain\n    .post(\"/register\")\n    .send({ email: \"coba@gmail.com\", password: \"coba\", name:\"\" });\n    \nexpect(response.body).to.include.keys(\"data\", \"message\", \"status\");\nexpect(response.body.status).to.eql('FAILED_REGISTER');\nexpect(response.body.data).to.eql('Email/Username/Password tidak boleh kosong');\nexpect(response.body.message).to.eql('Gagal Registrasi');\nexpect(response.statusCode).to.eql(420)",
+              "err": {},
+              "uuid": "f02b151d-759e-4e57-812a-a1a46302d4ee",
+              "parentUUID": "bd867f70-a199-4350-90fb-90b0207032c2",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "3. verfying Succes Register With Random Email Addres",
+              "fullTitle": "Scenario Register Feature 3. verfying Succes Register With Random Email Addres",
+              "timedOut": false,
+              "duration": 551,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "let random_email = Math.random().toString(36).substring(7);\nconst response = await domain\n    .post(\"/register\")\n    .send({ email: random_email + \"@gmail.com\", password: random_email, name: random_email});\nconsole.log(response.random_email, response.body);\nexpect(response.body).to.include.keys(\"data\", \"message\", \"status\");\nexpect(response.body.status).to.eql('SUCCESS_REGISTER');\nexpect(response.body.data).to.eql('berhasil');\nexpect(response.body.message).to.eql('created user!');",
+              "err": {},
+              "uuid": "7ed88ae2-45b3-4538-8fbe-a688d349bab3",
+              "parentUUID": "bd867f70-a199-4350-90fb-90b0207032c2",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "d47f12f2-67ea-4dfb-8642-dda892e52dcd",
+            "f02b151d-759e-4e57-812a-a1a46302d4ee",
+            "7ed88ae2-45b3-4538-8fbe-a688d349bab3"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 1675,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "2f93cfcc-8f11-467f-a39a-b77a30bcd518",
+          "title": "Scenario Update Profile Feature",
+          "fullFile": "C:\\Users\\Lenovo\\Documents\\Mocha chai\\test\\api-test\\update_profile.js",
+          "file": "\\test\\api-test\\update_profile.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "1. Verifying Success Update Profile",
+              "fullTitle": "Scenario Update Profile Feature 1. Verifying Success Update Profile",
+              "timedOut": false,
+              "duration": 1096,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const responseLogin = await domain \n  .post(\"/login\")\n  .send({ email: \"jokotampan900@gmail.com\", password: \"jokotampan900\" });\n\nconst authToken = responseLogin.body.credentials.access_token;    \nconst response = await domain \n  .put(\"/update-profile\")\n  .set(\"Authorization\", `${authToken}`)\n  .send({name: \"argavi\"})\n\nexpect(response.body).to.include.keys(\"data\", \"message\", \"status\");  \nexpect(response.body.data).to.eql('Username Anda menjadi argavi');\nexpect(response.body.message).to.eql('Berhasil Perbarui Profile');\nexpect(response.body.status).to.eql('SUCCESS_UPDATE_PROFILE')",
+              "err": {},
+              "uuid": "22ee401c-f5dc-4c27-8537-dc8c757a9bd6",
+              "parentUUID": "2f93cfcc-8f11-467f-a39a-b77a30bcd518",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "22ee401c-f5dc-4c27-8537-dc8c757a9bd6"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 1096,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "10.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": null,
+      "version": "6.2.0"
+    }
+  }
+}

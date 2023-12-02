@@ -1,0 +1,712 @@
+{
+	"info": {
+		"_postman_id": "cbad3cf0-d209-4498-a8e0-6f45c1b29f02",
+		"name": "API Testing Jago QA New",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "13488911",
+		"_collection_link": "https://orange-star-814144.postman.co/workspace/My-Workspace~c850e19a-cc0c-48e5-8f57-d283a8299dd6/collection/13488911-cbad3cf0-d209-4498-a8e0-6f45c1b29f02?action=share&source=collection_link&creator=13488911"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"batch18@gmail.com\",\n    \"password\": \"batch18\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://barru.pythonanywhere.com/login",
+					"protocol": "http",
+					"host": [
+						"barru",
+						"pythonanywhere",
+						"com"
+					],
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Success Login",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"tester@jagoqa.com\",\n    \"password\": \"testerjago\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://barru.pythonanywhere.com/login",
+							"protocol": "http",
+							"host": [
+								"barru",
+								"pythonanywhere",
+								"com"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Fri, 16 Sep 2022 14:39:08 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "X-Clacks-Overhead",
+							"value": "GNU Terry Pratchett"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "gzip"
+						},
+						{
+							"key": "Server",
+							"value": "PythonAnywhere"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"credentials\": {\n        \"access_token\": \"16f1ca681a30865df8795b3352dc9318d5b3036e79aadf2666b993f639bbce4d\",\n        \"expired_in\": 1663342748,\n        \"refresh_token\": \"c5a449e82c75b504eaec4c764cad33b02d10a04fa1938738ce5811ff283498d1\"\n    },\n    \"data\": \"Welcome tester jago\",\n    \"message\": \"Anda Berhasil Login\",\n    \"status\": \"SUCCESS_LOGIN\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"jaoqa.indonesia@gmail.com\",\n    \"password\": \"jagoqa\",\n    \"name\": \"jagoqa indonesia\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://barru.pythonanywhere.com/register",
+					"protocol": "http",
+					"host": [
+						"barru",
+						"pythonanywhere",
+						"com"
+					],
+					"path": [
+						"register"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Success Register",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"jaoqa.indonesia@gmail.com\",\n    \"password\": \"jagoqa\",\n    \"name\": \"jagoqa indonesia\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://barru.pythonanywhere.com/register",
+							"protocol": "http",
+							"host": [
+								"barru",
+								"pythonanywhere",
+								"com"
+							],
+							"path": [
+								"register"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Fri, 06 Oct 2023 07:34:30 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "74"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "X-Clacks-Overhead",
+							"value": "GNU Terry Pratchett"
+						},
+						{
+							"key": "Server",
+							"value": "PythonAnywhere"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": \"berhasil\",\n    \"message\": \"created user!\",\n    \"status\": \"SUCCESS_REGISTER\"\n}"
+				}
+			]
+		},
+		{
+			"name": "List User",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://barru.pythonanywhere.com/list-user",
+					"protocol": "http",
+					"host": [
+						"barru",
+						"pythonanywhere",
+						"com"
+					],
+					"path": [
+						"list-user"
+					],
+					"query": [
+						{
+							"key": "email",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "username",
+							"value": "barru",
+							"disabled": true
+						},
+						{
+							"key": "page",
+							"value": "1",
+							"disabled": true
+						},
+						{
+							"key": "limit",
+							"value": "2",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "List User Success Without Filter",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://barru.pythonanywhere.com/list-user",
+							"protocol": "http",
+							"host": [
+								"barru",
+								"pythonanywhere",
+								"com"
+							],
+							"path": [
+								"list-user"
+							],
+							"query": [
+								{
+									"key": "email",
+									"value": "barru",
+									"disabled": true
+								},
+								{
+									"key": "username",
+									"value": "tampan",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Fri, 26 Nov 2021 03:03:37 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "X-Clacks-Overhead",
+							"value": "GNU Terry Pratchett"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "gzip"
+						},
+						{
+							"key": "Server",
+							"value": "PythonAnywhere"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": [\n        {\n            \"email\": \"barru.kurniawan@gmail.com\",\n            \"username\": \"Barru Kurniawan\"\n        },\n        {\n            \"email\": \"sitampan@gmail.com\",\n            \"username\": \"tampan berani\"\n        },\n        {\n            \"email\": \"deinuritasari@gmail.com\",\n            \"username\": \"dwi nurita sari\"\n        },\n        {\n            \"email\": \"dnrinnes@gmail.com\",\n            \"username\": \"innes\"\n        },\n        {\n            \"email\": \"hidayatiyulvi@gmail.com\",\n            \"username\": \"yulvi\"\n        }\n    ],\n    \"message\": \"List of registered users\",\n    \"pagination\": {\n        \"current_page\": 1,\n        \"limit_per_page\": 5,\n        \"total_data\": 61\n    },\n    \"status\": \"SUCCESS_USER_LIST\"\n}"
+				},
+				{
+					"name": "List User Succes Filter Email",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://barru.pythonanywhere.com/list-user?email=testing",
+							"protocol": "http",
+							"host": [
+								"barru",
+								"pythonanywhere",
+								"com"
+							],
+							"path": [
+								"list-user"
+							],
+							"query": [
+								{
+									"key": "email",
+									"value": "testing"
+								},
+								{
+									"key": "username",
+									"value": "tampan",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Fri, 26 Nov 2021 03:04:21 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "200"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "X-Clacks-Overhead",
+							"value": "GNU Terry Pratchett"
+						},
+						{
+							"key": "Server",
+							"value": "PythonAnywhere"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": [\n        {\n            \"email\": \"testing.qa@gmail.com\",\n            \"username\": \"belajar qa\"\n        }\n    ],\n    \"message\": \"List of registered users\",\n    \"pagination\": {\n        \"current_page\": 1,\n        \"limit_per_page\": 5,\n        \"total_data\": 1\n    },\n    \"status\": \"SUCCESS_USER_LIST\"\n}"
+				},
+				{
+					"name": "List User Success Filter Username",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://barru.pythonanywhere.com/list-user?email=&username=tampan",
+							"protocol": "http",
+							"host": [
+								"barru",
+								"pythonanywhere",
+								"com"
+							],
+							"path": [
+								"list-user"
+							],
+							"query": [
+								{
+									"key": "email",
+									"value": ""
+								},
+								{
+									"key": "username",
+									"value": "tampan"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Fri, 26 Nov 2021 03:04:42 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "201"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "X-Clacks-Overhead",
+							"value": "GNU Terry Pratchett"
+						},
+						{
+							"key": "Server",
+							"value": "PythonAnywhere"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": [\n        {\n            \"email\": \"sitampan@gmail.com\",\n            \"username\": \"tampan berani\"\n        }\n    ],\n    \"message\": \"List of registered users\",\n    \"pagination\": {\n        \"current_page\": 1,\n        \"limit_per_page\": 5,\n        \"total_data\": 1\n    },\n    \"status\": \"SUCCESS_USER_LIST\"\n}"
+				},
+				{
+					"name": "List User Success Filter & Pagination",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://barru.pythonanywhere.com/list-user?email=&username=barru&page=1&limit=2",
+							"protocol": "http",
+							"host": [
+								"barru",
+								"pythonanywhere",
+								"com"
+							],
+							"path": [
+								"list-user"
+							],
+							"query": [
+								{
+									"key": "email",
+									"value": ""
+								},
+								{
+									"key": "username",
+									"value": "barru"
+								},
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "limit",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Fri, 26 Nov 2021 03:06:09 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "X-Clacks-Overhead",
+							"value": "GNU Terry Pratchett"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "gzip"
+						},
+						{
+							"key": "Server",
+							"value": "PythonAnywhere"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": [\n        {\n            \"email\": \"barru.kurniawan@gmail.com\",\n            \"username\": \"Barru Kurniawan\"\n        },\n        {\n            \"email\": \"gantengku@sdhgajsdgajhs.id\",\n            \"username\": \"barru ganteng\"\n        }\n    ],\n    \"message\": \"List of registered users\",\n    \"pagination\": {\n        \"current_page\": 1,\n        \"limit_per_page\": 2,\n        \"total_data\": 3\n    },\n    \"status\": \"SUCCESS_USER_LIST\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Update Profile",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "bc221ffa9b7668e309c2293979463a42409323a76071941f2451f1a060550634",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"haha 1\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://barru.pythonanywhere.com/update-profile",
+					"protocol": "http",
+					"host": [
+						"barru",
+						"pythonanywhere",
+						"com"
+					],
+					"path": [
+						"update-profile"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Update Profile Success",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "5ef842707382d711e285a599ed4dceced8a62d01cb89c31de6f4ccf54734fbfc",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"halmaheraho qa\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://barru.pythonanywhere.com/update-profile",
+							"protocol": "http",
+							"host": [
+								"barru",
+								"pythonanywhere",
+								"com"
+							],
+							"path": [
+								"update-profile"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sun, 14 Nov 2021 13:01:45 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "120"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "X-Clacks-Overhead",
+							"value": "GNU Terry Pratchett"
+						},
+						{
+							"key": "Server",
+							"value": "PythonAnywhere"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": \"Username Anda menjadi halmaheraho qa\",\n    \"message\": \"Berhasil Perbarui Profile\",\n    \"status\": \"SUCCESS_UPDATE_PROFILE\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Delete User",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "5ef842707382d711e285a599ed4dceced8a62d01cb89c31de6f4ccf54734fbfc",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"password\": \"belajarqa\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://barru.pythonanywhere.com/delete-user",
+					"protocol": "http",
+					"host": [
+						"barru",
+						"pythonanywhere",
+						"com"
+					],
+					"path": [
+						"delete-user"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Delete User Success",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "5ef842707382d711e285a599ed4dceced8a62d01cb89c31de6f4ccf54734fbfc",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"password\": \"belajarqa\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://barru.pythonanywhere.com/delete-user",
+							"protocol": "http",
+							"host": [
+								"barru",
+								"pythonanywhere",
+								"com"
+							],
+							"path": [
+								"delete-user"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sun, 14 Nov 2021 13:23:52 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "114"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "X-Clacks-Overhead",
+							"value": "GNU Terry Pratchett"
+						},
+						{
+							"key": "Server",
+							"value": "PythonAnywhere"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": \"Sedih melihatmu pergi halmaheraho qa\",\n    \"message\": \"Berhasil Hapus User\",\n    \"status\": \"SUCCESS_DELETE_PROFILE\"\n}"
+				}
+			]
+		}
+	]
+}
